@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tadu.NetCore.Api", "Tadu.NetCore.Api\Tadu.NetCore.Api.csproj", "{6FC532D9-EB17-4874-9DDA-71140E5CC82B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FC532D9-EB17-4874-9DDA-71140E5CC82B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FC532D9-EB17-4874-9DDA-71140E5CC82B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FC532D9-EB17-4874-9DDA-71140E5CC82B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FC532D9-EB17-4874-9DDA-71140E5CC82B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {364673B3-61DC-48C3-ABC1-038E39398EEA}
+	EndGlobalSection
+EndGlobal

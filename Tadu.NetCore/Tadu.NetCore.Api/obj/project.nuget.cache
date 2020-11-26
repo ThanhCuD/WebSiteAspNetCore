@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "LG2L7NmMKDmgxJji46/U7SdNHxSUt53BKMCFdfLUszTLIv59vP+d/UkoCzEFK9DYy2Et6kxu1mHG0EoEP76lVQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\Tadu.NetCore.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
+    "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\swashbuckle.aspnetcore\\5.5.0\\swashbuckle.aspnetcore.5.5.0.nupkg.sha512",
+    "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.5.0\\swashbuckle.aspnetcore.swagger.5.5.0.nupkg.sha512",
+    "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.5.0\\swashbuckle.aspnetcore.swaggergen.5.5.0.nupkg.sha512",
+    "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.5.0\\swashbuckle.aspnetcore.swaggerui.5.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
