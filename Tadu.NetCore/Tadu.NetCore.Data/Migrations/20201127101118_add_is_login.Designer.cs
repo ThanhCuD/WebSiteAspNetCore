@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tadu.NetCore.Data.Model;
 
 namespace Tadu.NetCore.Data.Migrations
 {
     [DbContext(typeof(TaduDBContext))]
-    partial class TaduDBContextModelSnapshot : ModelSnapshot
+    [Migration("20201127101118_add_is_login")]
+    partial class add_is_login
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

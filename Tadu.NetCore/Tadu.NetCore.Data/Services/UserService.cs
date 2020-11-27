@@ -1,4 +1,5 @@
-﻿using Tadu.NetCore.Data.Model;
+﻿using System.Linq;
+using Tadu.NetCore.Data.Model;
 
 namespace Tadu.NetCore.Data.Services
 {
@@ -22,6 +23,24 @@ namespace Tadu.NetCore.Data.Services
             return new ApiResult()
             {
                 Status = ApiResultEnum.Success
+            };
+        }
+        public ApiResult Login(string userName, string password)
+        {
+            var user = dBContext.Users.FirstOrDefault(_ => _.UserName == userName && _.Password == password);
+            if (user != null)
+            {
+                user.IsLogin = true;
+                dBContext.Users.Update(user);
+                dBContext.SaveChanges();
+                return new ApiResult()
+                {
+                    Status = ApiResultEnum.Success
+                };
+            }
+            return new ApiResult()
+            {
+                Status = ApiResultEnum.NothingChange
             };
         }
     }

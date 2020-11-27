@@ -21,12 +21,34 @@ namespace Tadu.NetCore.Api.Controllers
             _userService = userService;
         }
 
-        [HttpGet]
-        public IActionResult Get(string userName, string password)
+        [HttpGet("CreateUser")]
+        public IActionResult CreateUser(string userName, string password)
         {
             try
             {
                 var result = _userService.CreateUser(userName, password);
+                if (result.Status == Data.ApiResultEnum.NothingChange)
+                {
+                    return BadRequest(new { message = "Error: " + result.Message });
+                }
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                var message = "";
+                if (ex.InnerException != null)
+                    message = ex.InnerException.Message;
+                else
+                    message = ex.Message;
+                return BadRequest(new { message = "Error: " + message });
+            }
+        }
+        [HttpGet("Login")]
+        public IActionResult Login(string userName, string password)
+        {
+            try
+            {
+                var result = _userService.Login(userName, password);
                 if (result.Status == Data.ApiResultEnum.NothingChange)
                 {
                     return BadRequest(new { message = "Error: " + result.Message });

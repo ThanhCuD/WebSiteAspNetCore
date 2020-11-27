@@ -7,5 +7,6 @@ namespace Tadu.NetCore.Data.Services
     public interface IUserService
     {
         public ApiResult CreateUser(string userName, string password);
+        public ApiResult Login(string userName, string password);
     }
 }
