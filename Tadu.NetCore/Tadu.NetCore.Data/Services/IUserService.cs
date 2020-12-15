@@ -10,6 +10,7 @@ namespace Tadu.NetCore.Data.Services
     public interface IUserService
     {
         public Task<IdentityResult> RegisterUserAsync(RegisterUserModel model);
-        //public ApiResult Login(string userName, string password);
+        public Task<SignInResult> Login(LoginModel model);
+        public  Task Logout();
     }
 }

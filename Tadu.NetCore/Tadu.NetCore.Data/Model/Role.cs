@@ -2,8 +2,7 @@
 
 namespace Tadu.NetCore.Data.Model
 {
-    public class User : IdentityUser<int>
+    public class Role : IdentityRole<int>
     {
-        public string City { get; set; }
     }
 }
