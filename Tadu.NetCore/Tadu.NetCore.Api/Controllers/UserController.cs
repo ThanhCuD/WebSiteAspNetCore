@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Tadu.NetCore.Data.CustomModel;
 using Tadu.NetCore.Data.Services;
 
 namespace Tadu.NetCore.Api.Controllers
@@ -21,39 +22,22 @@ namespace Tadu.NetCore.Api.Controllers
             _userService = userService;
         }
 
-        [HttpGet("CreateUser")]
-        public IActionResult CreateUser(string userName, string password)
+        [HttpPost("RegisterUser")]
+        public async Task<IActionResult> RegisterUser(RegisterUserModel model)
         {
             try
             {
-                var result = _userService.CreateUser(userName, password);
-                if (result.Status == Data.ApiResultEnum.NothingChange)
+                var result = await _userService.RegisterUserAsync(model);
+                if (result.Succeeded)
                 {
-                    return BadRequest(new { message = "Error: " + result.Message });
+                    return Ok(result);
                 }
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                var message = "";
-                if (ex.InnerException != null)
-                    message = ex.InnerException.Message;
-                else
-                    message = ex.Message;
-                return BadRequest(new { message = "Error: " + message });
-            }
-        }
-        [HttpGet("Login")]
-        public IActionResult Login(string userName, string password)
-        {
-            try
-            {
-                var result = _userService.Login(userName, password);
-                if (result.Status == Data.ApiResultEnum.NothingChange)
+                var mess = "Error :";
+                foreach (var item in result.Errors)
                 {
-                    return BadRequest(new { message = "Error: " + result.Message });
+                    mess += item.Description;
                 }
-                return Ok();
+                return BadRequest(new { message = mess });
             }
             catch (Exception ex)
             {

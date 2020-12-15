@@ -8,11 +8,7 @@ namespace Tadu.NetCore.Data
     {
         public ApiResult()
         {
-            Status = ApiResultEnum.NothingChange;
-        }
-        public void NotFound(string field, int value)
-        {
-            Message = $"Not found data with {field}: {value}, the data no longer exist or has been deleted";
+
         }
         public ApiResultEnum Status { get; set; }
         public string Message { get; set; }
