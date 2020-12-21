@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj": {}
+    "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj": {
+    "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj",
         "projectName": "Tadu.NetCore.Data",
-        "projectPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj",
+        "projectPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj",
         "packagesPath": "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\obj\\",
+        "outputPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nguyen Thanh Duc\\AppData\\Roaming\\NuGet\\NuGet.Config",

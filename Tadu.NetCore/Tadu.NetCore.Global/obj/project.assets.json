@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\Tadu.NetCore.Global.csproj",
+      "projectUniqueName": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\Tadu.NetCore.Global.csproj",
       "projectName": "Tadu.NetCore.Global",
-      "projectPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\Tadu.NetCore.Global.csproj",
+      "projectPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\Tadu.NetCore.Global.csproj",
       "packagesPath": "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\obj\\",
+      "outputPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nguyen Thanh Duc\\AppData\\Roaming\\NuGet\\NuGet.Config",

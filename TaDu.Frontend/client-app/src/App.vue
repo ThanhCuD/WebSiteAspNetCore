@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld :msg="{name:  'dc',value:'dsadas'}"/>
+    <Registration :msg="{name:  'dc',value:'dsadas'}"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/Todo.vue'
+import Registration from './components/Registration.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Registration
   }
 }
 </script>

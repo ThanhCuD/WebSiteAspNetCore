@@ -6816,11 +6816,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\Tadu.NetCore.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\Tadu.NetCore.Api.csproj",
       "projectName": "Tadu.NetCore.Api",
-      "projectPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\Tadu.NetCore.Api.csproj",
+      "projectPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\Tadu.NetCore.Api.csproj",
       "packagesPath": "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\obj\\",
+      "outputPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nguyen Thanh Duc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6837,8 +6837,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj": {
-              "projectPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj"
+            "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj": {
+              "projectPath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+xIxjmEc/m0OsHMh4squMc3uuXTnxoJq2mPwXsih9UvKpd/y6D60Xn3lHWDsoj0I1IGdx0E6Pe7hLowJ9qiQEQ==",
+  "dgSpecHash": "ivi6wdw1bOZONXxrQBXep6+1WZs6X0p6qpMqp2k0tWiY4u/llq+RzYz5NTOxG0CcqOm0+JCGuoKdJT/a6LDGLA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\Tadu.NetCore.Api.csproj",
+  "projectFilePath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\Tadu.NetCore.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

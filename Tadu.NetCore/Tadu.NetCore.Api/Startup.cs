@@ -31,7 +31,13 @@ namespace Tadu.NetCore.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsApi",
+                    builder => builder.WithOrigins("http://localhost:8080/", "http://mywebsite.com")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod());
+            });
             services.AddDbContext<TaduDBContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
             services.AddSwaggerGen();
 
@@ -56,22 +62,18 @@ namespace Tadu.NetCore.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-
-                // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
-                // specifying the Swagger JSON endpoint.
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-                });
             }
-
+           
             app.UseHttpsRedirection();
-
             app.UseRouting();
+            app.UseCors("CorsApi");
             app.UseAuthentication();
             app.UseAuthorization();
-
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
