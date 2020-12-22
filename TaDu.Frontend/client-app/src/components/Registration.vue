@@ -7,7 +7,7 @@
       <span v-if="msgemail">{{msgemail}}</span>
       <label for="password">Password:</label>
       <input type="text" v-model="password" required><br>
-      <span v-if="msgpassword">{{msgpassword}}</span>
+      <span v-if="msgpassword">{{msgpassword}}</span><br><br>
       <input type="button" id = "get-joke" @click = "fetchAPIData" value="Register">
     </form>
 </div>

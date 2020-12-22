@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <Registration :msg="{name:  'dc',value:'dsadas'}"/>
+    <Registration/>
   </div>
 </template>
 
