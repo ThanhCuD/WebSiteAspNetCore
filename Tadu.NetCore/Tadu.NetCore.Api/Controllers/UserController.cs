@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Threading.Tasks;
 using Tadu.NetCore.Data.CustomModel;
 using Tadu.NetCore.Data.Services;
 
 namespace Tadu.NetCore.Api.Controllers
 {
-    [EnableCors("CorsApi")]
     [ApiController]
     [Route("[controller]")]
     public class UserController : ControllerBase

@@ -31,13 +31,7 @@ namespace Tadu.NetCore.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsApi",
-                    builder => builder.WithOrigins("http://localhost:8080/", "http://mywebsite.com")
-                    .AllowAnyHeader()
-                    .AllowAnyMethod());
-            });
+            services.AddCors();
             services.AddDbContext<TaduDBContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
             services.AddSwaggerGen();
 
@@ -66,7 +60,11 @@ namespace Tadu.NetCore.Api
            
             app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseCors("CorsApi");
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials());
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseSwagger();

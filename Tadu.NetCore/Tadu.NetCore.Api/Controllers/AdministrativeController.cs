@@ -51,6 +51,7 @@ namespace Tadu.NetCore.Api.Controllers
         }
 
         [HttpGet("GetRoles")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetRoles()
         {
             try
