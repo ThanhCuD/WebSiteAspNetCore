@@ -14,7 +14,7 @@
         </v-app-bar>
         <v-navigation-drawer app v-model="drawer" class="indigo">
             <v-list>
-                <v-list-item v-for="link in links" :key="link.text">
+                <v-list-item v-for="link in links" :key="link.text" route :to="link.route">
                     <v-list-item-icon>
                         <v-icon class="white--text" v-text="link.icon"></v-icon>
                     </v-list-item-icon>
