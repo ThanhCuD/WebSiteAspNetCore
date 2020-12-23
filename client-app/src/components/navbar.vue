@@ -7,6 +7,28 @@
                 <span>Vue</span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
+            <div class="text-center">
+                <v-menu offset-y>
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-btn
+                        v-bind="attrs"
+                        v-on="on"
+                        elevation="0"
+                        >
+                        <v-icon left>expand_more</v-icon>
+                        Menu
+                        </v-btn>
+                    </template>
+                    <v-list>
+                        <v-list-item
+                        v-for="(item, index) in links"
+                        :key="index" router :to="item.route"
+                        >
+                        <v-list-item-title>{{ item.text }}</v-list-item-title>
+                        </v-list-item>
+                    </v-list>
+                    </v-menu>
+                </div>
             <v-btn elevation="0">
                 <span>Sign Out</span>
                 <v-icon right>exit_to_app</v-icon>
