@@ -42,6 +42,9 @@
                     </v-avatar>
                 </v-col>
             </v-row>
+             <v-row justify="center">
+                 <Popup/>
+             </v-row>
             <v-list>
                 <v-list-item v-for="link in links" :key="link.text" route :to="link.route">
                     <v-list-item-icon>
@@ -56,6 +59,7 @@
     </nav>
 </template>
 <script>
+import Popup from './Popup';
 export default {
     data() {
         return {
@@ -66,6 +70,9 @@ export default {
                 { icon: 'mdi-account', text: 'Team', route: '/team' },
             ]
         }
+    },
+    components: {
+        Popup
     }
 }
 </script>
