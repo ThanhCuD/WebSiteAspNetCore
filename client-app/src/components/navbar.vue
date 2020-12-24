@@ -29,8 +29,8 @@
                     </v-list>
                     </v-menu>
                 </div>
-            <v-btn elevation="0">
-                <span>Sign Out</span>
+            <v-btn elevation="0" router :to="'/signIn'">
+                <span>Sign In</span>
                 <v-icon right>exit_to_app</v-icon>
             </v-btn>
         </v-app-bar>
@@ -68,6 +68,7 @@ export default {
                 { icon: 'mdi-view-dashboard', text: 'Dashboard', route: '/' },
                 { icon: 'mdi-folder', text: 'My Projects', route: '/projects' },
                 { icon: 'mdi-account', text: 'Team', route: '/team' },
+                { icon: 'mdi-account', text: 'Registration', route: '/registration' },
             ]
         }
     },

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ivi6wdw1bOZONXxrQBXep6+1WZs6X0p6qpMqp2k0tWiY4u/llq+RzYz5NTOxG0CcqOm0+JCGuoKdJT/a6LDGLA==",
+  "dgSpecHash": "P3n4UlS6jjBrV3It/Rktf6ajbGb7010bYrTC89jG+eaWsftFnA5mnAKDXBzfpUVUtW/XyTHWRVlE7shG8JJcpg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nguyen Thanh Duc\\Desktop\\personal\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\Tadu.NetCore.Api.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
     "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.10\\microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",
     "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.10\\microsoft.aspnetcore.cryptography.internal.3.1.10.nupkg.sha512",
     "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.10\\microsoft.aspnetcore.cryptography.keyderivation.3.1.10.nupkg.sha512",
     "C:\\Users\\Nguyen Thanh Duc\\.nuget\\packages\\microsoft.aspnetcore.dataprotection\\2.2.0\\microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",

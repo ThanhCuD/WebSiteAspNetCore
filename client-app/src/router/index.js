@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Dashboard from '../views/Dashboard.vue'
 import Team from '../views/Team.vue'
 import Project from '../views/Project.vue'
+import SignIn from '../views/SignIn.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/projects',
     name: 'Projects',
     component: Project
+  },
+  {
+    path: '/signIn',
+    name: 'SignIn',
+    component: SignIn
   }
 ]
 

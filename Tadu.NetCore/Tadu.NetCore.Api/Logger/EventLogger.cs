@@ -10,17 +10,17 @@ namespace Tadu.NetCore.Api.Logger
     {
         public void Debug(string text)
         {
-            EventLog.WriteEntry("MUISFAS-API", text, EventLogEntryType.Information);
+            EventLog.WriteEntry("Tadu-API", text, EventLogEntryType.Information);
         }
 
         public void Warn(string text)
         {
-            EventLog.WriteEntry("MUISFAS-API", text, EventLogEntryType.Warning);
+            EventLog.WriteEntry("Tadu-API", text, EventLogEntryType.Warning);
         }
 
         public void Error(string text)
         {
-            EventLog.WriteEntry("MUISFAS-API", text, EventLogEntryType.Error);
+            EventLog.WriteEntry("Tadu-API", text, EventLogEntryType.Error);
         }
 
         public void Error(string text, Exception ex)

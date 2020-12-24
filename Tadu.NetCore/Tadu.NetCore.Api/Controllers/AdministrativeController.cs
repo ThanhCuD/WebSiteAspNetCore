@@ -11,15 +11,17 @@ namespace Tadu.NetCore.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AdministrativeController : ControllerBase
+    public class AdministrativeController : BaseApiController
     {
         private readonly ILogger<AdministrativeController> _logger;
         private readonly IAdministrativeService administrativeService;
+        private readonly IUserService userService;
 
-        public AdministrativeController(ILogger<AdministrativeController> logger, IAdministrativeService  administrativeService)
+        public AdministrativeController(ILogger<AdministrativeController> logger, IAdministrativeService  administrativeService, IUserService userService)
         {
             _logger = logger;
             this.administrativeService = administrativeService;
+            this.userService = userService;
         }
 
         [HttpPost("CreateRole")]
@@ -56,6 +58,9 @@ namespace Tadu.NetCore.Api.Controllers
         {
             try
             {
+                var auth = new CustomValidations(userService).ValidateCurrentUser(this.AuthHeader);
+                if (!auth) return Unauthorized();
+
                 var result = await administrativeService.GetRoleAsync();
                 return Ok(result);
             }
@@ -69,7 +74,8 @@ namespace Tadu.NetCore.Api.Controllers
                 return BadRequest(new { message = "Error: " + message });
             }
         }
-        [HttpGet("EditRole")]
+        [Authorize(Roles = "string")]
+        [HttpPost("EditRole")]
         public async Task<IActionResult> EditRole(EditRoleModel model)
         {
             try

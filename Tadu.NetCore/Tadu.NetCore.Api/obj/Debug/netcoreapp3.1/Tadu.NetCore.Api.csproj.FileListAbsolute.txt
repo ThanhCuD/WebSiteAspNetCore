@@ -83,6 +83,7 @@ C:\Users\Nguyen Thanh Duc\Desktop\personal\2020\WebSiteAspNetCore\Tadu.NetCore\T
 C:\Users\Nguyen Thanh Duc\Desktop\personal\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Api\bin\Debug\netcoreapp3.1\Tadu.NetCore.Api.dll
 C:\Users\Nguyen Thanh Duc\Desktop\personal\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Api\bin\Debug\netcoreapp3.1\Tadu.NetCore.Api.pdb
 C:\Users\Nguyen Thanh Duc\Desktop\personal\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Api\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\Nguyen Thanh Duc\Desktop\personal\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Nguyen Thanh Duc\Desktop\personal\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Nguyen Thanh Duc\Desktop\personal\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\Nguyen Thanh Duc\Desktop\personal\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

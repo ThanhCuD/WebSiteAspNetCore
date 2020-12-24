@@ -57,7 +57,7 @@ namespace Tadu.NetCore.Api.Controllers
             try
             {
                 var result = await _userService.Login(model);
-                if (result.Succeeded)
+                if (result!=null)
                 {
                     return Ok(result);
                 }
