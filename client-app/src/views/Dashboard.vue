@@ -15,7 +15,7 @@
         
         <v-tooltip top>
          <template v-slot:activator="{ on }">
-            <v-btn elevation="0" small flat @click="sortBy('person')" v-on="on">
+            <v-btn elevation="0" small @click="sortBy('person')" v-on="on">
               <v-icon left small>person</v-icon>
               <span class="caption text-lowercase">By Person</span>
             </v-btn>
