@@ -35,16 +35,24 @@ namespace Tadu.NetCore.Data.Services
                     await signInManager.SignInAsync(user, false);
                     var tokenHandler = new JwtSecurityTokenHandler();
                     var key = Encoding.ASCII.GetBytes("dsadsa123123L:L:L'':");
+                    var lstRoleId = taduDBContext.UserRoles.Where(_ => _.UserId == user.Id).Select(_=>_.RoleId).ToList();
+                    var roles = taduDBContext.Roles.Where(_ => lstRoleId.Contains(_.Id));
                     var tokenDescriptor = new SecurityTokenDescriptor
                     {
                         Subject = new ClaimsIdentity(new Claim[]
                         { new Claim(ClaimTypes.Sid, Guid.NewGuid().ToString()),
-                            new Claim(ClaimTypes.Name, user.Id.ToString()),
+                            new Claim(ClaimTypes.Name, user.Id.ToString())
+                            
                         }),
                         Expires = DateTime.Now.AddDays(1),
 
                         SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
                     };
+                    foreach (var item in roles)
+                    {
+                        tokenDescriptor.Subject.AddClaim(new Claim(ClaimTypes.Role, item.Name));
+                    }
+
                     var token = tokenHandler.CreateToken(tokenDescriptor);
                     user.Token = tokenHandler.WriteToken(token);
                     await taduDBContext.SaveChangesAsync();

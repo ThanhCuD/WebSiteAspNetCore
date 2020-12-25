@@ -7,6 +7,17 @@ export default new Vuex.Store({
       notification: false,
       auth: JSON.parse(sessionStorage.getItem("auth")),
       lookup: {}
+    },
+    mutations: {
+      login(state, payload) {
+        state.auth = payload;
+        sessionStorage.setItem("auth", JSON.stringify(payload));
+      }
+    },
+    actions: {
+      login({ commit }, payload) {
+        commit("login", payload);
+      }
     }
-
+    
 });

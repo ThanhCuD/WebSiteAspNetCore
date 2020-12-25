@@ -9,7 +9,7 @@
       <label for="password">Password:</label>
       <v-text-field prepend-icon="lock" name="Password" label="Password" v-model="password" type="password"></v-text-field>
       <span v-if="msgpassword">{{msgpassword}}</span><br>
-      <v-btn @click = "fetchAPIData">
+      <v-btn  elevation="1" @click = "fetchAPIData">
         Login
       </v-btn>
     </form>
@@ -79,7 +79,8 @@ export default {
           "Password" : this.password
       })
       .then(data => {
-        console.log(data); // JSON data parsed by `data.json()` call
+        this.$store.dispatch("login", data.data)
+        this.$router.push("dashboard")
       });
     }
   }
