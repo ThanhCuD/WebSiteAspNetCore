@@ -36,15 +36,15 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 });
-// router.beforeEach((to, from, next) => {
-//   console.log(store.state.auth);
-//   if (!store.state.auth && to.path !== '/signIn') {
-//     next({ name: 'SignIn' })
-//   }
-//   else next()
-// })
 router.beforeEach((to, from, next) => {
-  if (to.name !== "Signin" && !store.state.auth) next({ name: "Signin" });
-  else next();
-});
+  console.log(store.state.auth);
+  if (!store.state.auth && to.path !== '/signIn') {
+    next({ name: 'SignIn' })
+  }
+  else next()
+})
+// router.beforeEach((to, from, next) => {
+//   if (to.name !== "Signin" && !store.state.auth) next({ name: "Signin" });
+//   else next();
+// });
 export default router
