@@ -79,8 +79,9 @@ export default {
           "Password" : this.password
       })
       .then(data => {
-        this.$store.dispatch("login", data.data)
-        this.$router.push("dashboard")
+        console.log(data.token);
+        this.$store.dispatch("login", data.token)
+        this.$router.push("/")
       });
     }
   }

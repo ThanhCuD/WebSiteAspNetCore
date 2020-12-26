@@ -16,3 +16,12 @@ C:\Users\Nguyen Thanh Duc\Desktop\personal\2020\WebSiteAspNetCore\Tadu.NetCore\T
 C:\Users\Nguyen Thanh Duc\Desktop\personal\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\obj\Debug\netcoreapp3.1\Tadu.NetCore.Global.csproj.CoreCompileInputs.cache
 C:\Users\Nguyen Thanh Duc\Desktop\personal\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\obj\Debug\netcoreapp3.1\Tadu.NetCore.Global.dll
 C:\Users\Nguyen Thanh Duc\Desktop\personal\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\obj\Debug\netcoreapp3.1\Tadu.NetCore.Global.pdb
+D:\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\bin\Debug\netcoreapp3.1\Tadu.NetCore.Global.deps.json
+D:\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\bin\Debug\netcoreapp3.1\Tadu.NetCore.Global.dll
+D:\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\bin\Debug\netcoreapp3.1\Tadu.NetCore.Global.pdb
+D:\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\obj\Debug\netcoreapp3.1\Tadu.NetCore.Global.csprojAssemblyReference.cache
+D:\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\obj\Debug\netcoreapp3.1\Tadu.NetCore.Global.csproj.CoreCompileInputs.cache
+D:\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\obj\Debug\netcoreapp3.1\Tadu.NetCore.Global.AssemblyInfoInputs.cache
+D:\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\obj\Debug\netcoreapp3.1\Tadu.NetCore.Global.AssemblyInfo.cs
+D:\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\obj\Debug\netcoreapp3.1\Tadu.NetCore.Global.dll
+D:\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\obj\Debug\netcoreapp3.1\Tadu.NetCore.Global.pdb
