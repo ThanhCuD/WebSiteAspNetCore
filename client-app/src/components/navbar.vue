@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav v-if="checkAuth()">
         <v-app-bar app flat>
             <v-app-bar-nav-icon class="grey--text" @click="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title class="text-uppercase grey--text">
@@ -61,6 +61,9 @@
 <script>
 import Popup from './Popup';
 export default {
+    props:{
+        auth:Boolean
+    },
     data() {
         return {
             drawer : false,
@@ -78,6 +81,9 @@ export default {
         logout(){
             this.$store.dispatch("logout");
             this.$router.push("singIn");
+        },
+        checkAuth(){
+            return this.$store.state.auth
         }
     }
 }

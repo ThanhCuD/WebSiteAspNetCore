@@ -57,8 +57,9 @@ namespace Tadu.NetCore.Data.Services
                     user.Token = tokenHandler.WriteToken(token);
                     await taduDBContext.SaveChangesAsync();
                 }
+                return user;
             }
-            return user;
+            return null;
         }
 
         public async Task<IdentityResult> RegisterUserAsync(RegisterUserModel model)

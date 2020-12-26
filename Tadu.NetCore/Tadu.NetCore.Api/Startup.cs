@@ -123,8 +123,10 @@ namespace Tadu.NetCore.Api
                 .AllowAnyHeader()
                 .SetIsOriginAllowed(origin => true) // allow any origin
                 .AllowCredentials());
+            
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseValidateCurrentUser();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -136,4 +138,16 @@ namespace Tadu.NetCore.Api
             });
         }
     }
+}
+public class Person
+{
+    public Person(string firstName, string lastName)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+    }
+
+    public string FirstName { get; }
+
+    public string LastName { get; }
 }

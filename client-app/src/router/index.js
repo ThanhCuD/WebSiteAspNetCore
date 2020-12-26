@@ -43,8 +43,4 @@ router.beforeEach((to, from, next) => {
   }
   else next()
 })
-// router.beforeEach((to, from, next) => {
-//   if (to.name !== "Signin" && !store.state.auth) next({ name: "Signin" });
-//   else next();
-// });
 export default router

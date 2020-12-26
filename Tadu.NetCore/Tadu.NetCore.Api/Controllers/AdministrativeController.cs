@@ -4,12 +4,14 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Tadu.NetCore.Api.Custom;
 using Tadu.NetCore.Data.CustomModel;
 using Tadu.NetCore.Data.Services;
 
 namespace Tadu.NetCore.Api.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("[controller]")]
     public class AdministrativeController : BaseApiController
     {
@@ -25,6 +27,7 @@ namespace Tadu.NetCore.Api.Controllers
         }
 
         [HttpPost("CreateRole")]
+        [Custom]
         public async Task<IActionResult> CreateRole(CreateRoleModel model)
         {
             try
@@ -53,7 +56,6 @@ namespace Tadu.NetCore.Api.Controllers
         }
 
         [HttpGet("GetRoles")]
-        [AllowAnonymous]
         public async Task<IActionResult> GetRoles()
         {
             try
@@ -74,7 +76,6 @@ namespace Tadu.NetCore.Api.Controllers
                 return BadRequest(new { message = "Error: " + message });
             }
         }
-        [Authorize(Roles = "string")]
         [HttpPost("EditRole")]
         public async Task<IActionResult> EditRole(EditRoleModel model)
         {

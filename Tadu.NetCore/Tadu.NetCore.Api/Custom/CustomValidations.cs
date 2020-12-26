@@ -1,13 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
-using System.Threading.Tasks;
-using Tadu.NetCore.Data.Model;
 using Tadu.NetCore.Data.Services;
 
-namespace Tadu.NetCore.Api
+namespace Tadu.NetCore.Api.Custom
 {
     public class CustomValidations
     {

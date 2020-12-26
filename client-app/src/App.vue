@@ -1,6 +1,6 @@
 <template>
   <v-app >
-    <Navbar/>
+    <Navbar />
     <v-main class="grey lighten-4" >
       <div class="mx-4 mb-4">
         <router-view></router-view>
@@ -17,7 +17,7 @@ export default {
     Navbar
   },
   data: () => ({
-    //
-  }),
+    
+  })
 };
 </script>
