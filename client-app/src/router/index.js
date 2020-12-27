@@ -4,6 +4,7 @@ import Dashboard from '../views/Dashboard.vue'
 import Team from '../views/Team.vue'
 import Project from '../views/Project.vue'
 import SignIn from '../views/SignIn.vue'
+import CreateRole from '../views/CreateRole.vue'
 import store from '../store/index'
 
 Vue.use(VueRouter)
@@ -28,6 +29,11 @@ const routes = [
     path: '/signIn',
     name: 'SignIn',
     component: SignIn
+  },
+  {
+    path: '/createRole',
+    name: 'CreateRole',
+    component: CreateRole
   }
 ]
 
@@ -37,7 +43,6 @@ const router = new VueRouter({
   routes
 });
 router.beforeEach((to, from, next) => {
-  console.log(store.state.auth);
   if (!store.state.auth && to.path !== '/signIn') {
     next({ name: 'SignIn' })
   }

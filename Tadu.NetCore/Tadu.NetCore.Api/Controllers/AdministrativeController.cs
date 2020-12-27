@@ -11,7 +11,7 @@ using Tadu.NetCore.Data.Services;
 namespace Tadu.NetCore.Api.Controllers
 {
     [ApiController]
-    [Authorize]
+    //[Authorize]
     [Route("[controller]")]
     public class AdministrativeController : BaseApiController
     {

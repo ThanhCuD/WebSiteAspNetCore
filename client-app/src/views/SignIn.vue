@@ -79,7 +79,6 @@ export default {
           "Password" : this.password
       })
       .then(data => {
-        console.log(data.token);
         this.$store.dispatch("login", data.token)
         this.$router.push("/")
       });

@@ -126,7 +126,7 @@ namespace Tadu.NetCore.Api
             
             app.UseAuthentication();
             app.UseAuthorization();
-            app.UseValidateCurrentUser();
+            //app.UseValidateCurrentUser();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
