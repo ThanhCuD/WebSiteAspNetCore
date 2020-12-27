@@ -11,7 +11,7 @@ using Tadu.NetCore.Data.Services;
 namespace Tadu.NetCore.Api.Controllers
 {
     [ApiController]
-    //[Authorize]
+    [Authorize]
     [Route("[controller]")]
     public class AdministrativeController : BaseApiController
     {
@@ -27,7 +27,6 @@ namespace Tadu.NetCore.Api.Controllers
         }
 
         [HttpPost("CreateRole")]
-        [Custom]
         public async Task<IActionResult> CreateRole(CreateRoleModel model)
         {
             try
@@ -60,9 +59,6 @@ namespace Tadu.NetCore.Api.Controllers
         {
             try
             {
-                var auth = new CustomValidations(userService).ValidateCurrentUser(this.AuthHeader);
-                if (!auth) return Unauthorized();
-
                 var result = await administrativeService.GetRoleAsync();
                 return Ok(result);
             }

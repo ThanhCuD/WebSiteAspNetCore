@@ -37,7 +37,7 @@ import errorAlert from '../components/ErrorAlert';
       role: '',
       roleRules: [
         v => !!v || 'Role Name is required',
-        v => (v && v.length <= 10) || 'Role Name must be less than 10 characters',
+        v => (v && v.length <= 100) || 'Role Name must be less than 100 characters',
       ],
     }),
     methods: {

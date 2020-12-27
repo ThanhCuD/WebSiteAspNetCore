@@ -13,9 +13,9 @@ export default new Vuex.Store({
       login(state, payload) {
         state.auth = payload;
         sessionStorage.setItem("auth", JSON.stringify(payload));
-        // api.axiosInstance.defaults.headers.common[
-        //   "Authorization"
-        // ] = `Bearer ${state.auth}`;
+        api.axiosInstance.defaults.headers.common[
+          "Authorization"
+        ] = `Bearer ${state.auth}`;
         console.log(api.axiosInstance.defaults.headers.common[
           "Authorization"
         ]);

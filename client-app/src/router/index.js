@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store/index'
 import Dashboard from '../views/Dashboard.vue'
 import Team from '../views/Team.vue'
 import Project from '../views/Project.vue'
 import SignIn from '../views/SignIn.vue'
 import CreateRole from '../views/CreateRole.vue'
-import store from '../store/index'
+import RoleDashboad from '../views/RoleDashboad.vue'
+import api from "../api";
 
 Vue.use(VueRouter)
 
@@ -34,6 +36,11 @@ const routes = [
     path: '/createRole',
     name: 'CreateRole',
     component: CreateRole
+  },
+  {
+    path: '/roleDashboad',
+    name: 'RoleDashboad',
+    component: RoleDashboad
   }
 ]
 
@@ -46,6 +53,11 @@ router.beforeEach((to, from, next) => {
   if (!store.state.auth && to.path !== '/signIn') {
     next({ name: 'SignIn' })
   }
-  else next()
+  else{
+      api.axiosInstance.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${store.state.auth}`;
+      next();
+    }
 })
 export default router
