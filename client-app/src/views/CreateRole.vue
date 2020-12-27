@@ -51,7 +51,7 @@ import errorAlert from '../components/ErrorAlert';
         }).then(data => {
         console.log(data);
         this.error= false;
-        this.$router.push("/");
+        this.$router.push("RoleDashboad");
 
         }).catch(error => {
           console.log(error);

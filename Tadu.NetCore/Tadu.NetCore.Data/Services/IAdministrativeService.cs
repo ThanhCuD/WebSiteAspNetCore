@@ -11,5 +11,6 @@ namespace Tadu.NetCore.Data.Services
         public Task<IdentityResult> CreateRoleAsync(CreateRoleModel model);
         public Task<IEnumerable<Role>> GetRoleAsync();
         public Task EditRoleAsync(EditRoleModel model);
+        public Task DeleteRoleAsync(DeleteRoleModel model);
     }
 }

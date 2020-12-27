@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Tadu.NetCore.Api.Custom;
+using Tadu.NetCore.Api.Logger;
 
 namespace Tadu.NetCore.Api.Controllers
 {
@@ -9,5 +9,6 @@ namespace Tadu.NetCore.Api.Controllers
     {
         private string _authHeader;
         protected string AuthHeader => _authHeader ??= Request.Headers["Authorization"];
+        protected ILogger log = new EventLogger();
     }
 }

@@ -9,8 +9,9 @@ using Tadu.NetCore.Data.Services;
 namespace Tadu.NetCore.Api.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("[controller]")]
-    public class UserController : ControllerBase
+    public class UserController : BaseApiController
     {
         private readonly ILogger<UserController> _logger;
         private readonly IUserService _userService;
@@ -41,12 +42,8 @@ namespace Tadu.NetCore.Api.Controllers
             }
             catch (Exception ex)
             {
-                var message = "";
-                if (ex.InnerException != null)
-                    message = ex.InnerException.Message;
-                else
-                    message = ex.Message;
-                return BadRequest(new { message = "Error: " + message });
+                this.log.Error(string.Format(Conts.Conts.ApiErrorMessageLog, ControllerContext.ActionDescriptor.ControllerName, ControllerContext.ActionDescriptor.ActionName), ex);
+                return BadRequest(new { message = Conts.Conts.ApiErrorMessageResponse });
             }
         }
 
@@ -66,12 +63,8 @@ namespace Tadu.NetCore.Api.Controllers
             }
             catch (Exception ex)
             {
-                var message = "";
-                if (ex.InnerException != null)
-                    message = ex.InnerException.Message;
-                else
-                    message = ex.Message;
-                return BadRequest(new { message = "Error: " + message });
+                this.log.Error(string.Format(Conts.Conts.ApiErrorMessageLog, ControllerContext.ActionDescriptor.ControllerName, ControllerContext.ActionDescriptor.ActionName), ex);
+                return BadRequest(new { message = Conts.Conts.ApiErrorMessageResponse });
             }
         }
 

@@ -2,9 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
-using Tadu.NetCore.Api.Custom;
 using Tadu.NetCore.Data.CustomModel;
 using Tadu.NetCore.Data.Services;
 
@@ -45,12 +43,8 @@ namespace Tadu.NetCore.Api.Controllers
             }
             catch (Exception ex)
             {
-                var message = "";
-                if (ex.InnerException != null)
-                    message = ex.InnerException.Message;
-                else
-                    message = ex.Message;
-                return BadRequest(new { message = "Error: " + message });
+                this.log.Error(string.Format(Conts.Conts.ApiErrorMessageLog, ControllerContext.ActionDescriptor.ControllerName, ControllerContext.ActionDescriptor.ActionName), ex);
+                return BadRequest(new { message = Conts.Conts.ApiErrorMessageResponse });
             }
         }
 
@@ -64,12 +58,8 @@ namespace Tadu.NetCore.Api.Controllers
             }
             catch (Exception ex)
             {
-                var message = "";
-                if (ex.InnerException != null)
-                    message = ex.InnerException.Message;
-                else
-                    message = ex.Message;
-                return BadRequest(new { message = "Error: " + message });
+                this.log.Error(string.Format(Conts.Conts.ApiErrorMessageLog, ControllerContext.ActionDescriptor.ControllerName, ControllerContext.ActionDescriptor.ActionName), ex);
+                return BadRequest(new { message = Conts.Conts.ApiErrorMessageResponse });
             }
         }
         [HttpPost("EditRole")]
@@ -82,12 +72,23 @@ namespace Tadu.NetCore.Api.Controllers
             }
             catch (Exception ex)
             {
-                var message = "";
-                if (ex.InnerException != null)
-                    message = ex.InnerException.Message;
-                else
-                    message = ex.Message;
-                return BadRequest(new { message = "Error: " + message });
+                this.log.Error(string.Format(Conts.Conts.ApiErrorMessageLog, ControllerContext.ActionDescriptor.ControllerName, ControllerContext.ActionDescriptor.ActionName), ex);
+                return BadRequest(new { message = Conts.Conts.ApiErrorMessageResponse });
+            }
+        }
+
+        [HttpPost("DeleteRole")]
+        public async Task<IActionResult> DeleteRole(DeleteRoleModel model)
+        {
+            try
+            {
+                await administrativeService.DeleteRoleAsync(model);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                this.log.Error(string.Format(Conts.Conts.ApiErrorMessageLog,ControllerContext.ActionDescriptor.ControllerName,ControllerContext.ActionDescriptor.ActionName), ex);
+                return BadRequest(new { message = Conts.Conts.ApiErrorMessageResponse });
             }
         }
     }

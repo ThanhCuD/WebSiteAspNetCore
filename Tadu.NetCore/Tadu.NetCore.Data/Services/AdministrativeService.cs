@@ -40,5 +40,13 @@ namespace Tadu.NetCore.Data.Services
                 await roleManager.UpdateAsync(result);
             }
         }
+        public async Task DeleteRoleAsync(DeleteRoleModel model)    
+        {
+            var result = await roleManager.FindByIdAsync(model.Id.ToString());
+            if (result != null)
+            {
+                await roleManager.DeleteAsync(result);
+            }
+        }
     }
 }
