@@ -6645,11 +6645,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\COde\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj",
       "projectName": "Tadu.NetCore.Data",
-      "projectPath": "D:\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\COde\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\COde\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

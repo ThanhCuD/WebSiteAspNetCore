@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\Tadu.NetCore.Global.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\COde\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\Tadu.NetCore.Global.csproj",
       "projectName": "Tadu.NetCore.Global",
-      "projectPath": "D:\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\Tadu.NetCore.Global.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\COde\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\Tadu.NetCore.Global.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\COde\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

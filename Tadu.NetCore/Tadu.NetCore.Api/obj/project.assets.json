@@ -1998,6 +1998,19 @@
         },
         "runtime": {
           "bin/placeholder/Tadu.NetCore.Data.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Tadu.NetCore.Global/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Tadu.NetCore.Global.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tadu.NetCore.Global.dll": {}
         }
       }
     }
@@ -6829,6 +6842,11 @@
       "type": "project",
       "path": "../Tadu.NetCore.Data/Tadu.NetCore.Data.csproj",
       "msbuildProject": "../Tadu.NetCore.Data/Tadu.NetCore.Data.csproj"
+    },
+    "Tadu.NetCore.Global/1.0.0": {
+      "type": "project",
+      "path": "../Tadu.NetCore.Global/Tadu.NetCore.Global.csproj",
+      "msbuildProject": "../Tadu.NetCore.Global/Tadu.NetCore.Global.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6837,7 +6855,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.0",
       "Swashbuckle.AspNetCore >= 5.5.0",
-      "Tadu.NetCore.Data >= 1.0.0"
+      "Tadu.NetCore.Data >= 1.0.0",
+      "Tadu.NetCore.Global >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6847,11 +6866,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\Tadu.NetCore.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\COde\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\Tadu.NetCore.Api.csproj",
       "projectName": "Tadu.NetCore.Api",
-      "projectPath": "D:\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\Tadu.NetCore.Api.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\COde\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\Tadu.NetCore.Api.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\COde\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6871,8 +6890,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj": {
-              "projectPath": "D:\\2020\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj"
+            "C:\\Users\\Admin\\Desktop\\COde\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\COde\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Data\\Tadu.NetCore.Data.csproj"
+            },
+            "C:\\Users\\Admin\\Desktop\\COde\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\Tadu.NetCore.Global.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\COde\\WebSiteAspNetCore\\Tadu.NetCore\\Tadu.NetCore.Global\\Tadu.NetCore.Global.csproj"
             }
           }
         }
