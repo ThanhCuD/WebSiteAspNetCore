@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Tadu.NetCore.Data.CustomModel;
 using Tadu.NetCore.Data.Model;
+using Microsoft.Extensions.Options;
+using Tadu.NetCore.Global.Helper;
 
 namespace Tadu.NetCore.Data.Services
 {
@@ -17,12 +19,13 @@ namespace Tadu.NetCore.Data.Services
         private readonly UserManager<User> userManager;
         private readonly SignInManager<User> signInManager;
         private readonly TaduDBContext taduDBContext;
-
-        public UserService(UserManager<User> userManager, SignInManager<User> signInManager, TaduDBContext taduDBContext)
+        private readonly AppSettings _appSettings;
+        public UserService(UserManager<User> userManager, SignInManager<User> signInManager, TaduDBContext taduDBContext, IOptions<AppSettings> options)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.taduDBContext = taduDBContext;
+            _appSettings = options.Value;
         }
         public async Task<User> Login(LoginModel model)
         {
@@ -68,12 +71,7 @@ namespace Tadu.NetCore.Data.Services
             var result = await userManager.CreateAsync(user, model.Password);
             return result;
         }
-        //public async Task<IdentityResult> UpdateUserAsync(UpdateUserModel model)
-        //{
-        //    var user = await userManager.FindByEmailAsync(model.Email);
-
-        //    await userManager.UpdateAsync(user, model.Password);
-        //}
+        
         public async Task<User> GetUserById(string id)
         {
             var result = await taduDBContext.Users.FirstOrDefaultAsync(_=>_.Id.ToString() == id);
@@ -83,5 +81,35 @@ namespace Tadu.NetCore.Data.Services
             await signInManager.SignOutAsync();
         }
 
+        public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest model)
+        {
+            var user = userManager.Users.FirstOrDefault(_ => _.UserName == model.Username);
+            if (user != null)
+            {
+                var res = await signInManager.CheckPasswordSignInAsync(user, model.Password, false);
+                if (res.Succeeded)
+                {
+                    await signInManager.SignInAsync(user, false);
+                    var token = generateJwtToken(user);
+
+                    return new AuthenticateResponse(user, token);
+                }
+            }
+            return null;
+        }
+        private string generateJwtToken(User user)
+        {
+            // generate token that is valid for 7 days
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+        }
     }
 }

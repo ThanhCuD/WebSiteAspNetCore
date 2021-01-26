@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Tadu.NetCore.Data.Services;
 using Tadu.NetCore.Global.Helper;
 
-namespace Tadu.NetCore.Api.Custom
+namespace Tadu.NetCore.Api.Extensions
 {
     //https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api#authorize-attribute-cs
     public class JwtMiddleware
@@ -24,6 +24,15 @@ namespace Tadu.NetCore.Api.Custom
             _appSettings = options.Value;
         }
 
+        public async Task Invoke(HttpContext context,IUserService userService)
+        {
+            var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+
+            if (token != null)
+                AttachUserToContext(context, userService, token);
+
+            await _next(context);
+        }
 
         private void AttachUserToContext(HttpContext context, IUserService userService, string token)
         {

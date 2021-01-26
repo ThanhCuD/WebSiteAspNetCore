@@ -17,4 +17,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Tadu.NetCore.Global\Tadu.NetCore.Global.csproj" />
+  </ItemGroup>
+
 </Project>

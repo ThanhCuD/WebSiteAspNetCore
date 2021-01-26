@@ -1,25 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Collections.Generic;
+using System.Text;
 using Tadu.NetCore.Data.Model;
 using Tadu.NetCore.Data.Services;
+using Tadu.NetCore.Global.Helper;
 
 namespace Tadu.NetCore.Api
 {
@@ -38,40 +32,23 @@ namespace Tadu.NetCore.Api
             services.AddCors();
             services.AddDbContext<TaduDBContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
             services.AddSwaggerGen();
-
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            var appSettings = Configuration.GetSection("AppSettings").Get<AppSettings>();
             services.AddIdentity<User, Role>(o =>
             {
                 o.Password.RequiredLength = 6;
                 o.Password.RequireUppercase = false;
                 o.Password.RequireNonAlphanumeric = false;
             }).AddEntityFrameworkStores<TaduDBContext>();
-            // configure jwt authentication
 
-
-            var key = Encoding.ASCII.GetBytes("dsadsa123123L:L:L'':");
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(x =>
-            {
-                x.RequireHttpsMetadata = false;
-                x.SaveToken = true;
-                x.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = false,
-                    ValidateAudience = false
-                };
-            });
 
             services.AddControllers(o =>
             {
                 var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
                 o.Filters.Add(new AuthorizeFilter(policy));
             });
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+         
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAdministrativeService, AdministrativeService>();
             services.AddSwaggerGen(c =>
@@ -103,9 +80,9 @@ namespace Tadu.NetCore.Api
                             In = ParameterLocation.Header,
                         },
                         new List<string>()
-                                }
-                            });
-                        });
+                     }
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -123,10 +100,10 @@ namespace Tadu.NetCore.Api
                 .AllowAnyHeader()
                 .SetIsOriginAllowed(origin => true) // allow any origin
                 .AllowCredentials());
-            
             app.UseAuthentication();
+            app.UseJwtMiddlewareAuthorize();
             app.UseAuthorization();
-            app.UseValidateCurrentUser();
+
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -138,16 +115,4 @@ namespace Tadu.NetCore.Api
             });
         }
     }
-}
-public class Person
-{
-    public Person(string firstName, string lastName)
-    {
-        FirstName = firstName;
-        LastName = lastName;
-    }
-
-    public string FirstName { get; }
-
-    public string LastName { get; }
 }

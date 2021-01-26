@@ -7,9 +7,10 @@ namespace Tadu.NetCore.Data.Services
 {
     public interface IUserService
     {
-        public Task<User> GetUserById(string id);
-        public Task<IdentityResult> RegisterUserAsync(RegisterUserModel model);
-        public Task<User> Login(LoginModel model);
-        public  Task Logout();
+        Task<User> GetUserById(string id);
+        Task<IdentityResult> RegisterUserAsync(RegisterUserModel model);
+        Task<User> Login(LoginModel model);
+        Task Logout();
+        Task<AuthenticateResponse> Authenticate(AuthenticateRequest model);
     }
 }

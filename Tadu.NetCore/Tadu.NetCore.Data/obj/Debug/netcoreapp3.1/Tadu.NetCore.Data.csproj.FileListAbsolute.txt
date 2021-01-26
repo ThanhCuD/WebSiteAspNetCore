@@ -34,3 +34,18 @@ D:\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\obj\Debug\netcoreapp3.1
 D:\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\obj\Debug\netcoreapp3.1\Tadu.NetCore.Data.dll
 D:\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\obj\Debug\netcoreapp3.1\Tadu.NetCore.Data.pdb
 D:\2020\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\obj\Debug\netcoreapp3.1\Tadu.NetCore.Data.genruntimeconfig.cache
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\bin\Debug\netcoreapp3.1\Tadu.NetCore.Data.deps.json
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\bin\Debug\netcoreapp3.1\Tadu.NetCore.Data.runtimeconfig.json
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\bin\Debug\netcoreapp3.1\Tadu.NetCore.Data.runtimeconfig.dev.json
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\bin\Debug\netcoreapp3.1\Tadu.NetCore.Data.dll
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\bin\Debug\netcoreapp3.1\Tadu.NetCore.Data.pdb
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\obj\Debug\netcoreapp3.1\Tadu.NetCore.Data.csprojAssemblyReference.cache
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\obj\Debug\netcoreapp3.1\Tadu.NetCore.Data.AssemblyInfoInputs.cache
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\obj\Debug\netcoreapp3.1\Tadu.NetCore.Data.AssemblyInfo.cs
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\obj\Debug\netcoreapp3.1\Tadu.NetCore.Data.csproj.CoreCompileInputs.cache
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\obj\Debug\netcoreapp3.1\Tadu.NetCore.Data.dll
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\obj\Debug\netcoreapp3.1\Tadu.NetCore.Data.pdb
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\obj\Debug\netcoreapp3.1\Tadu.NetCore.Data.genruntimeconfig.cache
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\bin\Debug\netcoreapp3.1\Tadu.NetCore.Global.dll
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\bin\Debug\netcoreapp3.1\Tadu.NetCore.Global.pdb
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Data\obj\Debug\netcoreapp3.1\Tadu.NetCore.Data.csproj.CopyComplete

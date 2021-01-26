@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using Tadu.NetCore.Api.Extensions;
 using System.Threading.Tasks;
 using Tadu.NetCore.Data.CustomModel;
 using Tadu.NetCore.Data.Services;
@@ -9,7 +9,7 @@ using Tadu.NetCore.Data.Services;
 namespace Tadu.NetCore.Api.Controllers
 {
     [ApiController]
-    [Authorize]
+    [AuthorizeExtention]
     [Route("[controller]")]
     public class AdministrativeController : BaseApiController
     {

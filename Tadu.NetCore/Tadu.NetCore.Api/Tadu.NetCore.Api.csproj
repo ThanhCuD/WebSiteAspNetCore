@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tadu.NetCore.Data\Tadu.NetCore.Data.csproj" />
+    <ProjectReference Include="..\Tadu.NetCore.Global\Tadu.NetCore.Global.csproj" />
   </ItemGroup>
 
 
