@@ -33,3 +33,4 @@ C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCor
 C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\obj\Debug\netcoreapp3.1\Tadu.NetCore.Global.csproj.CoreCompileInputs.cache
 C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\obj\Debug\netcoreapp3.1\Tadu.NetCore.Global.dll
 C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\obj\Debug\netcoreapp3.1\Tadu.NetCore.Global.pdb
+C:\Users\Nguyen Thanh Duc\Desktop\personal\CodeNew\WebSiteAspNetCore\Tadu.NetCore\Tadu.NetCore.Global\obj\Debug\netcoreapp3.1\Tadu.NetCore.Global.csprojAssemblyReference.cache

@@ -13,6 +13,7 @@ namespace Tadu.NetCore.Api.Extensions
         public void OnAuthorization(AuthorizationFilterContext context)
         {
             if (context.ActionDescriptor.EndpointMetadata.OfType<AllowAnonymousAttribute>().Any()) return;
+
             var user = context.HttpContext.Items["User"];
             if (user == null)
             {

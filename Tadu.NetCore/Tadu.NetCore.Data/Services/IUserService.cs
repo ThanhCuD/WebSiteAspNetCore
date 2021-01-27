@@ -12,5 +12,6 @@ namespace Tadu.NetCore.Data.Services
         Task<User> Login(LoginModel model);
         Task Logout();
         Task<AuthenticateResponse> Authenticate(AuthenticateRequest model);
+        Task<AuthenticateResponse> Authen2(AuthenticateRequest model);
     }
 }

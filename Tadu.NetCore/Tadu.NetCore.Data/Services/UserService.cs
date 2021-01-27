@@ -97,6 +97,20 @@ namespace Tadu.NetCore.Data.Services
             }
             return null;
         }
+        public async Task<AuthenticateResponse> Authen2(AuthenticateRequest model)
+        {
+            var user = userManager.Users.FirstOrDefault(_ => _.UserName == model.Username);
+            if (user != null)
+            {
+                var res =await signInManager.CheckPasswordSignInAsync(user, model.Password, false);
+                if (res.Succeeded)
+                {
+                    var token = generateJwtToken(user);
+                    return new AuthenticateResponse(user, token);
+                }
+            }
+            return null;
+        }
         private string generateJwtToken(User user)
         {
             // generate token that is valid for 7 days
@@ -104,11 +118,28 @@ namespace Tadu.NetCore.Data.Services
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
+                Subject = new ClaimsIdentity(new[] { 
+                    new Claim(ClaimTypes.Name, user.Id.ToString()),
+                    new Claim(ClaimTypes.Role, "")
+                }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+        }
+
+        private string GenerateJwtToken2(User user)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var tokenDescription = new SecurityTokenDescriptor()
+            {
+                Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescription);
             return tokenHandler.WriteToken(token);
         }
     }
