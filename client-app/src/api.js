@@ -2,8 +2,8 @@ import axios from "axios";
 
 let baseurl =
   process.env.NODE_ENV == "development"
-    ? "https://localhost:44365"
-    : "https://localhost:44365";
+    ? "https://localhost:44366"
+    : "https://localhost:44366";
 
 const instance = axios.create();
 const get = (params, url) => instance.get(`${baseurl}/${url}`, params);
@@ -13,7 +13,7 @@ axios.post(`${baseurl}/${url}`, params);
 export default {
   axiosInstance: instance,
   authenticate: (params) => postWithoutToken(params, "Users/authenticate"),
-  createRole: (params) => post(params,"Administrative/CreateRole"),
-  getRoles:()=>get({},"Administrative/GetRoles"),
-  deleteRole:(id)=>post({'id':id},"Administrative/DeleteRole")
+  createRole: (params) => post(params,"api/Roles/createRole"),
+  getRoles:()=>get({},"api/Roles"),
+  deleteRole:(id)=>post({'id':id},"api/Roles/deleteRole")
 }

@@ -22,7 +22,6 @@
           <v-flex xs6 sm4 md2>
             <DialogConfirm @delete="deleteItem(project.id)"/>
           </v-flex>
-          
         </v-row>
          <v-row cols="12">
         <v-divider></v-divider>
@@ -59,7 +58,8 @@ export default {
     getData(){
       api.getRoles().then(data => {
         this.error= false;
-        this.roles = data.data;
+        this.roles = data.data.data;
+        console.log(data);
         }).catch(error => {
           console.log(error);
           this.error= true;

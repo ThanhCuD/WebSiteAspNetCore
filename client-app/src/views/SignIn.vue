@@ -74,12 +74,12 @@ export default {
         return response.json(); // parses JSON response into native JavaScript objects
       }
 
-      postData("https://localhost:44365/User/Login", {
-          "UserName" : this.email,
+      postData("https://localhost:44366/api/Account/authenticate", {
+          "Email" : this.email,
           "Password" : this.password
       })
       .then(data => {
-        this.$store.dispatch("login", data.token)
+        this.$store.dispatch("login", data.data.jwToken)
         this.$router.push("/")
       });
     }
