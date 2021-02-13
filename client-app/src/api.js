@@ -15,5 +15,6 @@ export default {
   authenticate: (params) => postWithoutToken(params, "Users/authenticate"),
   createRole: (params) => post(params,"api/Roles/createRole"),
   getRoles:()=>get({},"api/Roles"),
-  deleteRole:(id)=>post({'id':id},"api/Roles/deleteRole")
+  deleteRole:(id)=>post({'id':id},"api/Roles/deleteRole"),
+  updateRole:(params)=>post(params,"api/Roles/updateRole")
 }

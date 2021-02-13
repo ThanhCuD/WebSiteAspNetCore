@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <!-- <errorAlert :value="error"></errorAlert> -->
     <h1 class="subtitle-1 grey--text">Role Dashboard</h1>
     <v-container class="my-5">
       <v-row class="ma-3">
@@ -17,7 +16,7 @@
              <div >{{project.name}}</div>
           </v-flex>
           <v-flex xs2 sm4 md2>
-                <v-btn class="info" elevation="0" dark v-on="on">Edit</v-btn>
+            <EditRolePopup v-bind:idrole="project.id" @handleIncrement="getData()"/>
           </v-flex>
           <v-flex xs6 sm4 md2>
             <DialogConfirm @delete="deleteItem(project.id)"/>
@@ -35,11 +34,13 @@
 // @ is an alias to /src
 import api from '../api';
 import CreateRolePopup from '../components/PopupCreateRole';
+import EditRolePopup from '../components/PopupEditRole';
 import DialogConfirm from '../components/DialogConfirm';
 export default {
   components:{
     CreateRolePopup,
-    DialogConfirm
+    DialogConfirm,
+    EditRolePopup
   },
   data () {
     return {
