@@ -2,15 +2,25 @@
   <div class="home">
     <h1 class="subtitle-1 grey--text">Management Person</h1>
     <v-container class="my-5">
-      <v-row class="ma-3">
-        <v-btn @click="create">Create New Person </v-btn>
+      <v-row class="my-5">
+         <v-col
+          cols="12"
+          sm="6"
+          md="3"
+        >
+          <v-btn @click="create">Create New Person </v-btn>
+        </v-col>
+        <v-col
+        >
+          <v-text-field
+            label="Search" 
+            v-model="searchValue"
+            @input="search"
+          ></v-text-field>
+        </v-col>
       </v-row>
       <v-card flat class="ps-3" v-for="item in person" :key="item.id">
         <v-row  :class="`pa-3 project ${item.status}`" >
-          <v-flex xs6 sm4 md2>
-            <div class="caption grey--text">ID</div>
-             <div >{{item.id}}</div>
-          </v-flex>
           <v-flex xs6 sm4 md2>
             <div class="caption grey--text">Name</div>
              <div >{{item.name}}</div>
@@ -27,6 +37,21 @@
             <div class="caption grey--text">LevelInFamily</div>
              <div >{{item.levelInFamily}}</div>
           </v-flex>
+          <v-flex xs6 sm4 md2>
+            <div class="caption grey--text">Action</div>
+            <v-btn 
+              tile
+              color="success"
+              :to="{ name: 'DetailPerson', params: { id: item.id }}">
+              Detail
+            </v-btn>
+            <v-btn 
+              tile
+              color="success"
+              :to="{ name: 'EditPerson', params: { id: item.id }}">
+              Update
+            </v-btn>
+           </v-flex>
         </v-row>
          <v-row cols="12">
         <v-divider></v-divider>
@@ -45,26 +70,42 @@ export default {
     return {
       error:false,
       pageNumber: 1,
-      person: []
+      person: [],
+      searchValue: ''
     }
   },
   mounted() {
     this.getData();
-  }
-  ,
+  },
   methods: {
     getData(){
-      api.getPerson(this.pageNumber).then(data => {
+      api.getPersons(this.pageNumber).then(data => {
         this.error= false;
         this.person = data.data.data;
         console.log(data);
-        }).catch(error => {
-          console.log(error);
+        }).catch(errors=>{
+          console.log(errors);
           this.error= true;
+          if (errors.response.status === 401 && errors.response.headers["token-expired"]) {
+              this.$router.push("/signIn");
+          }
         });
     },
     create(){
       this.$router.push("/management-person/new-person");
+    },
+    search(){
+      api.searchPersons(1,this.searchValue).then(data => {
+        this.error= false;
+        this.person = data.data.data;
+        console.log(data);
+        }).catch(errors=>{
+          console.log(errors);
+          this.error= true;
+          if (errors.response.status === 401 && errors.response.headers["token-expired"]) {
+              this.$router.push("/signIn");
+          }
+        });
     }
   }
 }

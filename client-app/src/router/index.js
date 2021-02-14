@@ -9,6 +9,8 @@ import CreateRole from '../views/CreateRole.vue'
 import RoleDashboad from '../views/RoleDashboad.vue'
 import PersonMain from '../views/PersonMain.vue'
 import CreatePerson from '../views/Persons/CreatePerson.vue'
+import DetailPerson from '../views/Persons/DetailPerson.vue'
+import EditPerson from '../views/Persons/EditPerson.vue'
 import api from "../api";
 
 Vue.use(VueRouter)
@@ -53,6 +55,18 @@ const routes = [
     path: '/management-person/new-person',
     name: 'CreatePerson',
     component: CreatePerson
+  }
+  ,
+  {
+    path: '/management-person/detail/:id',
+    name: 'DetailPerson',
+    component: DetailPerson
+  }
+  ,
+  {
+    path: '/management-person/update/:id',
+    name: 'EditPerson',
+    component: EditPerson
   }
 ]
 

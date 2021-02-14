@@ -2,6 +2,7 @@
 <v-container class="my-5">
 <errorAlert :value="error"></errorAlert>
   <v-form
+    :readonly= "true"
     ref="form"
     v-model="valid"
     lazy-validation
@@ -31,14 +32,6 @@
       :rules="numberRules"
       label="LevelInParentage"
     ></v-text-field>
-    <v-btn
-      :disabled="!valid"
-      color="success"
-      class="mr-4"
-      @click="validateAndSubmit"
-    >
-      Create
-    </v-btn>
   </v-form>
 </v-container>
 </template>
@@ -64,25 +57,21 @@ import errorAlert from '../../components/ErrorAlert';
         v => (v && v.length <= 100) || 'This field must be less than 100 characters',
       ],
     }),
+    mounted() {
+      this.getData();
+    },
     methods: {
-      validateAndSubmit () {
-        var valid = this.$refs.form.validate();
-        if(!valid){
-           return;
-        }
-        api.createPerson({
-          "Name" : this.Name,
-          "Gender" : this.Gender,
-          "LevelInParentage" : parseInt(this.LevelInParentage),
-          "LevelInFamily" : parseInt(this.LevelInFamily)
-        }).then(data => {
-        console.log(data);
-        this.error= false;
-        this.$router.push("/management-person");
+      getData(){
+        api.getPersonById(this.$route.params.id).then(data=>{
+          var p = data.data.data;
+          this.Name = p.name;
+          this.Gender = p.gender;
+          this.LevelInParentage = p.levelInParentage;
+          this.LevelInFamily = p.levelInFamily;
         }).catch(error => {
           console.log(error);
           this.error= true;
-          if (error.status === 401 && error.headers.has('Token-Expired')) {
+           if (error.status === 401 && error.headers.has('Token-Expired')) {
               this.$router.push("/signIn");
           }
         });
