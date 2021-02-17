@@ -73,6 +73,7 @@ export default {
                 { icon: 'mdi-account', text: 'Team', route: '/team' },
                 { icon: 'mdi-account', text: 'RoleDashboad', route: '/roleDashboad' },
                 { icon: 'mdi-account', text: 'Person management', route: '/management-person' },
+                { icon: 'mdi-account', text: 'Chart', route: '/chart' },
             ]
         }
     },

@@ -5,6 +5,7 @@ import Dashboard from '../views/Dashboard.vue'
 import Team from '../views/Team.vue'
 import Project from '../views/Project.vue'
 import SignIn from '../views/SignIn.vue'
+import Chart from '../views/Chart.vue'
 import CreateRole from '../views/CreateRole.vue'
 import RoleDashboad from '../views/RoleDashboad.vue'
 import PersonMain from '../views/PersonMain.vue'
@@ -67,6 +68,11 @@ const routes = [
     path: '/management-person/update/:id',
     name: 'EditPerson',
     component: EditPerson
+  },
+  {
+    path: '/chart',
+    name: 'Chart',
+    component: Chart
   }
 ]
 

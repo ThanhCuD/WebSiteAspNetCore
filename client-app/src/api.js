@@ -29,4 +29,5 @@ export default {
   searchPersons:(pnumber,searchValue)=>get({},
     "api/"+apiVersion+ "/Person" +"?PageNumber="+pnumber +"&PageSize=" +pageSize+
     (searchValue!=null?"&Name="+searchValue:"")),
+  getChart:()=>get({},"api/"+apiVersion+ "/Chart" )
 }
