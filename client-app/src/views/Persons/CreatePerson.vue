@@ -31,6 +31,8 @@
       :rules="numberRules"
       label="LevelInParentage"
     ></v-text-field>
+    <PopupSelectCard @selected="Selected"/>
+    <SelectMultiValue v-bind:sourceNameParent="parentNameArr"/>
     <v-btn
       :disabled="!valid"
       color="success"
@@ -40,14 +42,20 @@
       Create
     </v-btn>
   </v-form>
+  
+  
 </v-container>
 </template>
 <script>
 import api from '../../api';
 import errorAlert from '../../components/ErrorAlert';
+import PopupSelectCard from '../../components/PopupSelectCard';
+import SelectMultiValue from '../../components/SelectMultiValue';
   export default {
     components:{
-      errorAlert
+      errorAlert,
+      PopupSelectCard,
+      SelectMultiValue
     },
     data: () => ({
       valid: true,
@@ -56,6 +64,8 @@ import errorAlert from '../../components/ErrorAlert';
       Gender: '',
       LevelInParentage: 0,
       LevelInFamily: 0,
+      parentNameArr:[],
+      parentId : 0,
       numberRules:[
         v => v >= 0 || 'Must is a postive number'
       ],
@@ -74,7 +84,8 @@ import errorAlert from '../../components/ErrorAlert';
           "Name" : this.Name,
           "Gender" : this.Gender,
           "LevelInParentage" : parseInt(this.LevelInParentage),
-          "LevelInFamily" : parseInt(this.LevelInFamily)
+          "LevelInFamily" : parseInt(this.LevelInFamily),
+          "IdParent" : this.parentId
         }).then(data => {
         console.log(data);
         this.error= false;
@@ -83,6 +94,23 @@ import errorAlert from '../../components/ErrorAlert';
           console.log(error);
           this.error= true;
           if (error.status === 401 && error.headers.has('Token-Expired')) {
+              this.$router.push("/signIn");
+          }
+        });
+      },
+      Selected:  function(id){
+        console.log(id);
+         api.getPersonById(id).then(data=>{
+          var p = data.data.data;
+          this.parentId  = p.id;
+          if(!this.parentNameArr.includes(p.name)){
+            this.parentNameArr.push(p.name);
+          }
+          console.log(this.parentNameArr);
+        }).catch(error => {
+          console.log(error);
+          this.error= true;
+           if (error.status === 401 && error.headers.has('Token-Expired')) {
               this.$router.push("/signIn");
           }
         });
