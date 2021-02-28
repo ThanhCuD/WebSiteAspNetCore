@@ -311,12 +311,12 @@ export default {
   padding: 3px;
   border: 2px dashed transparent;
   text-align: center;
-  width: 130px;
+  width: 200px !important;
 }
 .orgchart.l2r .node,
 .orgchart.r2l .node {
   width: 50px;
-  height: 130px;
+  height: 250px;
 }
 .orgchart .node > .spinner {
   position: absolute;
@@ -349,7 +349,7 @@ export default {
 }
 .orgchart .node .title {
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
   height: 20px;
   line-height: 20px;

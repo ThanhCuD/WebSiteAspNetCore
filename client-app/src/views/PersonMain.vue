@@ -54,9 +54,21 @@
            </v-flex>
         </v-row>
          <v-row cols="12">
-        <v-divider></v-divider>
+        <v-divider>
+          
+        </v-divider>
         </v-row>
       </v-card>
+      <v-col cols="12" sm="9">
+          <v-pagination
+            v-model="pageNumber"
+            :length="5"
+            total-visible="7"
+            next-icon="mdi-menu-right"
+            prev-icon="mdi-menu-left"
+            @input="handlePageChange"
+          ></v-pagination>
+        </v-col>
     </v-container>
   </div>
 </template>
@@ -96,6 +108,19 @@ export default {
     },
     search(){
       api.searchPersons(1,this.searchValue).then(data => {
+        this.error= false;
+        this.person = data.data.data;
+        console.log(data);
+        }).catch(errors=>{
+          console.log(errors);
+          this.error= true;
+          if (errors.response.status === 401 && errors.response.headers["token-expired"]) {
+              this.$router.push("/signIn");
+          }
+        });
+    },
+    handlePageChange(page){
+      api.getPersons(page).then(data => {
         this.error= false;
         this.person = data.data.data;
         console.log(data);
