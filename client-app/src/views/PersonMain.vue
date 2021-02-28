@@ -62,7 +62,7 @@
       <v-col cols="12" sm="9">
           <v-pagination
             v-model="pageNumber"
-            :length="5"
+            :length="this.totalPage"
             total-visible="7"
             next-icon="mdi-menu-right"
             prev-icon="mdi-menu-left"
@@ -83,7 +83,8 @@ export default {
       error:false,
       pageNumber: 1,
       person: [],
-      searchValue: ''
+      searchValue: '',
+      totalPage : 0
     }
   },
   mounted() {
@@ -94,6 +95,7 @@ export default {
       api.getPersons(this.pageNumber).then(data => {
         this.error= false;
         this.person = data.data.data;
+        this.totalPage = data.data.totalData;
         console.log(data);
         }).catch(errors=>{
           console.log(errors);
@@ -110,7 +112,8 @@ export default {
       api.searchPersons(1,this.searchValue).then(data => {
         this.error= false;
         this.person = data.data.data;
-        console.log(data);
+        this.totalPage = data.data.totalData;
+        console.log( this.totalPage );
         }).catch(errors=>{
           console.log(errors);
           this.error= true;
@@ -123,6 +126,7 @@ export default {
       api.getPersons(page).then(data => {
         this.error= false;
         this.person = data.data.data;
+        this.totalPage = data.data.totalData;
         console.log(data);
         }).catch(errors=>{
           console.log(errors);
