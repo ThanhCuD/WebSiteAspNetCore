@@ -78,7 +78,7 @@ export default {
         }
     },
     components: {
-        Popup
+        Popup,
     },
     methods : {
         logout(){
